@@ -1,0 +1,12 @@
+server:
+  port: 8761
+eureka:
+  instance:
+    #指定hostname为域名-在本地hosts文件中有配置
+    hostname: eureka-server1
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      #配置整个集群中其它节点的信息
+      defaultZone: http://eureka-server2:8762/eureka/,http://eureka-server3:8763/eureka/
